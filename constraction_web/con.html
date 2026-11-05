@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BuildPro | Construction Company</title>
+
+    <link rel="stylesheet" href="css/style2.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- REVIEW POPUP -->
+<div class="review-overlay" id="reviewPopup">
+
+    <div class="review-modal">
+
+        <!-- HEADER -->
+        <div class="review-header">
+
+            <div>
+                <span>BUILDPRO</span>
+                <h2>Share Your Experience</h2>
+                <p>We value your feedback!</p>
+            </div>
+
+            <button type="button" class="close-review"
+                    id="closeReview">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- FORM -->
+        <form id="reviewForm">
+
+            <div class="review-form-group">
+                <label for="reviewName">Full Name</label>
+
+                <input type="text"
+                       id="reviewName"
+                       name="name"
+                       placeholder="Enter your full name"
+                       required>
+            </div>
+
+
+            <div class="review-form-group">
+                <label for="reviewEmail">Email Address</label>
+
+                <input type="email"
+                       id="reviewEmail"
+                       name="email"
+                       placeholder="Enter your email"
+                       required>
+            </div>
+
+
+            <div class="review-form-group">
+                <label for="reviewProject">Select Project</label>
+
+                <select id="reviewProject"
+                        name="project"
+                        required>
+
+                    <option value="">Choose a project</option>
+                    <option value="Modern Office Complex">
+                        Modern Office Complex
+                    </option>
+
+                    <option value="Main Highway Project">
+                        Main Highway Project
+                    </option>
+
+                    <option value="Luxury Residential Villas">
+                        Luxury Residential Villas
+                    </option>
+
+                    <option value="Other">Other</option>
+
+                </select>
+            </div>
+
+
+            <!-- STAR RATING -->
+            <div class="review-form-group">
+
+                <label>Rate Your Experience</label>
+
+                <div class="rating-stars" id="ratingStars">
+
+                    <input type="radio" name="rating"
+                           id="star5" value="5" required>
+                    <label for="star5">
+                        <i class="fa-solid fa-star"></i>
+                    </label>
+
+                    <input type="radio" name="rating"
+                           id="star4" value="4">
+                    <label for="star4">
+                        <i class="fa-solid fa-star"></i>
+                    </label>
+
+                    <input type="radio" name="rating"
+                           id="star3" value="3">
+                    <label for="star3">
+                        <i class="fa-solid fa-star"></i>
+                    </label>
+
+                    <input type="radio" name="rating"
+                           id="star2" value="2">
+                    <label for="star2">
+                        <i class="fa-solid fa-star"></i>
+                    </label>
+
+                    <input type="radio" name="rating"
+                           id="star1" value="1">
+                    <label for="star1">
+                        <i class="fa-solid fa-star"></i>
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- REVIEW MESSAGE -->
+            <div class="review-form-group">
+
+                <label for="reviewMessage">Your Review</label>
+
+                <textarea id="reviewMessage"
+                          name="review"
+                          rows="4"
+                          placeholder="Tell us about your experience..."
+                          required></textarea>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+            <div class="review-form-buttons">
+
+                <button type="button"
+                        class="cancel-review"
+                        id="cancelReview">
+                    Cancel
+                </button>
+
+                <button type="submit"
+                        class="submit-review">
+                    Submit Review
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+            <p id="reviewStatus" role="status"></p>
+
+        </form>
+
+    </div>
+
+</div>
+<!-- Project Details Popup -->
+<div class="project-popup" id="projectPopup">
+
+    <div class="project-popup-content">
+
+        <button class="close-project" id="closeProject">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="popup-image">
+            <img id="popupImage" src="" alt="Project Image">
+        </div>
+
+        <div class="popup-details">
+
+            <span class="popup-label">OUR PROJECT</span>
+
+            <h2 id="popupTitle">Project Name</h2>
+
+            <div class="project-info">
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="popupLocation"></span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span id="popupCategory"></span>
+                </p>
+            </div>
+
+            <p class="popup-description" id="popupDescription"></p>
+
+            <a href="contact.html" class="popup-contact-btn">
+                Discuss a Similar Project
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+
+        <!-- VIDEO BACKGROUND -->
+        <video class="hero-video"
+               autoplay
+               muted
+               loop
+               playsinline
+               poster="images/construction-poster.jfif">
+
+            <source src="videos/construction.mp4" type="video/mp4">
+
+            Your browser does not support video.
+        </video>
+
+        <!-- DARK OVERLAY -->
+        <div class="video-overlay"></div>
+
+        <!-- NAVIGATION -->
+        <header class="header">
+
+            <a href="#" class="logo">
+                <i class="fa-solid fa-building"></i>
+                BUILD<span>PRO.</span>
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html" class="active">Home</a>
+                <a href="#" id="about_nav">About Us</a>
+                <a href="#"  id="service_nav">Services</a>
+                <a href="#"  id="project_nav">Projects</a>
+                <a href="#"  id="contact_nav">Contact</a>
+            </nav>
+
+            <a href="get-quote.html" class="contact-btn" >
+                Get A Quote
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </header>
+
+
+        <!-- HERO CONTENT -->
+        <div class="hero-content">
+
+            <div class="hero-label">
+                <span></span>
+                BUILDING THE FUTURE SINCE 2001
+            </div>
+
+            <h1>
+                WE BUILD
+                <br>
+                <span>YOUR FUTURE</span>
+                <br>
+                WITH EXCELLENCE.
+            </h1>
+
+            <p>
+                Transforming ideas into extraordinary structures.
+                We deliver innovative construction solutions with
+                quality, precision and commitment.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="btn-primary" id="explore_btn">
+                    Explore Our Projects
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="#about" class="btn-outline">
+                    <i class="fa-solid fa-play"></i>
+                    Discover More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM INFORMATION -->
+        <div class="hero-bottom">
+
+            <div class="hero-stats">
+
+                <div class="stat">
+                    <h2>150<span>+</span></h2>
+                    <p>Projects Completed</p>
+                </div>
+
+                <div class="stat">
+                    <h2>25<span>+</span></h2>
+                    <p>Years Experience</p>
+                </div>
+
+                <div class="stat">
+                    <h2>98<span>%</span></h2>
+                    <p>Client Satisfaction</p>
+                </div>
+
+            </div>
+
+            <div class="scroll" id="scroll_explore_btn">
+                <span>SCROLL TO EXPLORE</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+<section class="about" id="about">
+
+    <div class="about-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="about-content">
+
+            <span class="about-label">
+                WHO WE ARE
+            </span>
+
+            <h2>
+                Building Tomorrow's
+                <span>World Today.</span>
+            </h2>
+
+            <p>
+                We are a professional construction company
+                delivering high-quality residential,
+                commercial and industrial construction projects.
+                Our commitment to innovation, quality and
+                excellence makes us your trusted construction partner.
+            </p>
+
+            <div class="about-features">
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Quality Construction
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Professional Team
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    On-Time Delivery
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Modern Technology
+                </div>
+
+            </div>
+
+            <a href="#" class="about-btn" id="dicover_btn">
+                Discover Our Story
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+        <div class="about-image">
+
+            <img src="images/construction2.jfif"
+                 alt="Modern construction project">
+
+            <div class="about-experience">
+                <h3>25<span>+</span></h3>
+                <p>Years of Experience</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- SERVICES -->
+     <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+
+            <div class="service-card" id="building_btn">
+                <i class="fa-solid fa-building"></i>
+                <h3>Building Construction</h3>
+                <p>Modern residential and commercial buildings.</p>
+            </div>
+
+            <div class="service-card" id="architectural_btn">
+                <i class="fa-solid fa-drafting-compass"></i>
+                <h3>Architecture Design</h3>
+                <p>Innovative architectural planning and design.</p>
+            </div>
+
+            <div class="service-card" id="road_btn">
+                <i class="fa-solid fa-road"></i>
+                <h3>Road Construction</h3>
+                <p>Quality roads and infrastructure development.</p>
+            </div>
+             <div class="service-card" id="residntial_btn">
+                <i class="fa-solid fa-house"></i>
+                <h3>Residential Construction</h3>
+                <p>Modern residential and commercial buildings.</p>
+            </div>
+
+            <div class="service-card" id="renovation_btn">
+              <i class="fa-solid fa-hammer"></i>
+              <h3>Renovation</h3>
+              <p>Transforming and improving existing buildings through quality renovation and repair services.</p>
+            </div>
+
+           
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+   
+<!-- LATEST PROJECTS SECTION -->
+<section class="projects" id="projects">
+
+    <div class="projects-container">
+
+        <!-- SECTION HEADING -->
+        <div class="projects-heading">
+            <span>OUR LATEST WORK</span>
+            <h2>Explore Our <span>Projects</span></h2>
+            <p>
+                Discover our latest construction projects,
+                showcasing our commitment to quality,
+                innovation and excellence.
+            </p>
+        </div>
+
+        <!-- PROJECT FILTERS -->
+        <div class="project-filters">
+
+            <button class="filter-btn active" data-filter="all">
+                All Projects
+            </button>
+
+            <button class="filter-btn" data-filter="building">
+                Buildings
+            </button>
+
+            <button class="filter-btn" data-filter="infrastructure">
+                Infrastructure
+            </button>
+
+            <button class="filter-btn" data-filter="residential">
+                Residential
+            </button>
+
+        </div>
+
+        <!-- PROJECT CARDS -->
+        <div class="project-container">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card" data-category="building">
+
+                <div class="project-image">
+                    <img src="images/con3.jfif"
+                         alt="Modern Office Complex">
+
+                    <span class="project-category">
+                        Buildings
+                    </span>
+                </div>
+
+                <div class="project-info">
+
+                    <h3>Modern Office Complex</h3>
+
+                    <p>
+                        A modern commercial building designed
+                        with innovative architecture and
+                        high-quality materials.
+                    </p>
+
+                    <a  data-id="1" class="view-project-btn">
+                        View Project
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+            <div class="project-card" data-category="infrastructure">
+
+                <div class="project-image">
+                    <img src="images/con5.jfif"
+                         alt="Highway Construction">
+
+                    <span class="project-category">
+                        Infrastructure
+                    </span>
+                </div>
+
+                <div class="project-info">
+
+                    <h3>Main Highway Project</h3>
+
+                    <p>
+                        Quality road construction designed
+                        to improve transportation and
+                        connectivity.
+                    </p>
+
+                    <a  data-id="2" class="view-project-btn">
+                        View Project
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+            <div class="project-card" data-category="residential">
+
+                <div class="project-image">
+                    <img src="images/con4.jfif"
+                         alt="Luxury Residential Villa">
+
+                    <span class="project-category">
+                        Residential
+                    </span>
+                </div>
+
+                <div class="project-info">
+
+                    <h3>Luxury Residential Villas</h3>
+
+                    <p>
+                        Beautiful modern residential homes
+                        combining comfort, elegance
+                        and functionality.
+                    </p>
+
+                    <a  data-id="3" class="view-project-btn">
+                        View Project
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM BUTTON -->
+        <div class="projects-bottom" >
+            <a href="#" class="all-projects-btn" id="view_all_pro_btn">
+                View All Projects
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US SECTION -->
+<section class="why-choose" id="why-choose">
+
+    <div class="why-container">
+
+        <!-- LEFT IMAGE -->
+        <div class="why-image">
+
+            <img src="images/cons6.jpg"
+                 alt="BuildPro construction team working">
+
+            <div class="why-image-box">
+                <i class="fa-solid fa-hard-hat"></i>
+                <div>
+                    <h3>Building With Excellence</h3>
+                    <p>Quality is our priority.</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT CONTENT -->
+        <div class="why-content">
+
+            <span class="why-label">WHY CHOOSE BUILDPRO</span>
+
+            <h2>
+                We Build Your Vision
+                <span>With Excellence.</span>
+            </h2>
+
+            <p class="why-description">
+                Choosing the right construction partner makes
+                all the difference. We combine experience,
+                innovation and quality to deliver construction
+                projects that exceed expectations.
+            </p>
+
+
+            <!-- REASONS -->
+            <div class="why-reasons">
+
+                <div class="why-item">
+
+                    <div class="why-icon">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+
+                    <div>
+                        <h3>Quality Workmanship</h3>
+                        <p>
+                            We use quality materials and modern
+                            construction techniques to ensure
+                            excellent results.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <div class="why-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <h3>Experienced Professionals</h3>
+                        <p>
+                            Our skilled engineers and construction
+                            team bring expertise to every project.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <div class="why-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <h3>On-Time Project Delivery</h3>
+                        <p>
+                            We carefully manage every project
+                            to meet agreed schedules and deadlines.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="why-item">
+
+                    <div class="why-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <h3>Safety & Reliability</h3>
+                        <p>
+                            We prioritize workplace safety,
+                            responsibility and customer satisfaction.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+            <a href="about.html" class="why-btn">
+                Learn More About Us
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CLIENT TESTIMONIALS SECTION -->
+<section class="testimonials" id="testimonials">
+
+    <div class="testimonial-container">
+
+        <!-- SECTION HEADING -->
+        <div class="testimonial-heading">
+
+            <span>WHAT OUR CLIENTS SAY</span>
+
+            <h2>Trusted By Our <strong>Clients.</strong></h2>
+
+            <p>
+                Our greatest achievement is the satisfaction
+                of our clients. Discover what they say about
+                working with BuildPro.
+            </p>
+
+        </div>
+
+
+        <!-- TESTIMONIAL CARDS -->
+        <div class="testimonial-grid">
+
+            <!-- CLIENT 1 -->
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <div class="testimonial-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <p class="testimonial-text">
+                    "BuildPro delivered an excellent construction
+                    project. Their team was professional,
+                    responsible and committed to quality.
+                    I highly recommend their services."
+                </p>
+
+                <div class="client-info">
+
+                    <img src="images/men.jfif"
+                         alt="Client portrait">
+
+                    <div>
+                        <h3>Abebe Kebede</h3>
+                        <span>Business Owner</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLIENT 2 -->
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <div class="testimonial-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <p class="testimonial-text">
+                    "I was impressed by their modern designs
+                    and attention to detail. They completed
+                    our project with great quality and
+                    excellent communication."
+                </p>
+
+                <div class="client-info">
+
+                    <img src="images/men.jfif"
+                         alt="Client portrait">
+
+                    <div>
+                        <h3>Hana Tesfaye</h3>
+                        <span>Property Owner</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLIENT 3 -->
+            <div class="testimonial-card">
+
+                <div class="quote-icon">
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <div class="testimonial-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <p class="testimonial-text">
+                    "Working with BuildPro was a great experience.
+                    They managed the construction process
+                    efficiently and delivered exactly what
+                    we expected."
+                </p>
+
+                <div class="client-info">
+
+                    <img src="images/men.jfif"
+                         alt="Client portrait">
+
+                    <div>
+                        <h3>Dawit Alemu</h3>
+                        <span>Company Manager</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM REVIEW BUTTON -->
+        <div class="testimonial-bottom">
+
+            <p>Have you worked with BuildPro?</p>
+
+            <a class="review-btn" id="review_btn">
+                Submit a Review
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+   <!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Company Information -->
+        <div class="footer-box footer-about">
+
+            <a href="index.html" class="footer-logo">
+                <i class="fa-solid fa-helmet-safety"></i>
+                Build<span>Pro</span>
+            </a>
+
+            <p>
+                Building strong foundations and creating lasting
+                structures. We provide reliable construction
+                solutions with quality, innovation and excellence.
+            </p>
+
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="#" aria-label="Telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="projects.html">Our Projects</a></li>
+                <li><a  id="submit-review">Submit a Review</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Our Services -->
+        <div class="footer-box">
+
+            <h3>Our Services</h3>
+
+            <ul>
+                <li><a href="services.html">Building Construction</a></li>
+                <li><a href="services.html">Road Construction</a></li>
+                <li><a href="services.html">Residential Projects</a></li>
+                <li><a href="services.html">Commercial Projects</a></li>
+                <li><a href="services.html">Renovation & Remodeling</a></li>
+                <li><a href="services.html">Project Management</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-box footer-contact">
+
+            <h3>Contact Information</h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Addis Ababa, Ethiopia</span>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <span>+251 900 000 000</span>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <span>info@buildpro.com</span>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock"></i>
+                <span>Monday - Saturday: 8:00 AM - 5:00 PM</span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-newsletter">
+
+        <div>
+            <h3>Stay Updated With BuildPro</h3>
+            <p>Subscribe to receive our latest projects and company news.</p>
+        </div>
+
+        <form id="newsletterForm">
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            BuildPro Construction Company. All Rights Reserved.
+        </p>
+
+        <div class="footer-bottom-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
+
+    </div>
+
+</footer>
+<script src="js/con_home.js"></script>
+</body>
+</html>

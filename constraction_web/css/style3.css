@@ -1,0 +1,261 @@
+
+/* ================= GET A QUOTE ================= */
+
+.quote-section {
+    min-height: 100vh;
+    background: #101b2b;
+    padding: 80px 7%;
+}
+
+.quote-container {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.3fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* LEFT INFORMATION */
+
+.quote-info {
+    color: #fff;
+}
+
+.quote-label {
+    color: #ff941f;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.quote-info h1 {
+    font-size: 43px;
+    line-height: 1.3;
+    margin: 22px 0;
+}
+
+.quote-info h1 span {
+    color: #ff941f;
+}
+
+.quote-info > p {
+    color: #b9c4d3;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.quote-benefits {
+    margin-top: 30px;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 18px;
+    color: #dce3ed;
+    font-size: 15px;
+}
+
+.benefit i {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff941f;
+    color: #101b2b;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.quote-contact {
+    margin-top: 45px;
+    padding-top: 25px;
+    border-top: 1px solid #34445b;
+}
+
+.quote-contact h3 {
+    margin-bottom: 18px;
+    color: #fff;
+}
+
+.quote-contact p {
+    margin-bottom: 13px;
+    color: #b9c4d3;
+}
+
+.quote-contact i {
+    color: #ff941f;
+    margin-right: 10px;
+}
+
+
+/* RIGHT FORM */
+
+.quote-form-box {
+    background: #15243a;
+    border: 1px solid #34445b;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+}
+
+.quote-form-heading h2 {
+    color: #fff;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.quote-form-heading p {
+    color: #aeb9c8;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+
+/* FORM ROW */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    background: #101b2b;
+    border: 1px solid #34445b;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ff941f;
+    box-shadow: 0 0 0 2px rgba(255,148,31,0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #8795a8;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: #15243a;
+    color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+
+/* SUBMIT BUTTON */
+
+.quote-submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: #ff941f;
+    color: #101b2b;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quote-submit-btn i {
+    margin-left: 10px;
+}
+
+.quote-submit-btn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.quote-note {
+    color: #aeb9c8;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 18px;
+}
+
+.quote-note i {
+    color: #ff941f;
+    margin-right: 5px;
+}
+
+.quote-message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .quote-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .quote-info h1 {
+        font-size: 36px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .quote-section {
+        padding: 50px 5%;
+    }
+
+    .quote-form-box {
+        padding: 25px 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .quote-info h1 {
+        font-size: 30px;
+    }
+
+    .quote-form-heading h2 {
+        font-size: 23px;
+    }
+
+}
